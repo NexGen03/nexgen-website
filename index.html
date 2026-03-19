@@ -1,14 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NexGen Trio Solutions</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      color: #222;
+      background: #f7f9fc;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f172a, #1d4ed8);
+      color: white;
+      padding: 24px 10%;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      background: white;
+      border-radius: 50%;
+      padding: 6px;
+    }
+
+    .brand h1 {
+      font-size: 2rem;
+      margin-bottom: 6px;
+    }
+
+    .brand p {
+      font-size: 1rem;
+      opacity: 0.95;
+    }
+
+    .hero {
+      padding: 30px 0 10px;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      max-width: 800px;
+      font-size: 1.05rem;
+    }
+
+    section {
+      padding: 50px 10%;
+      background: white;
+      margin: 20px auto;
+    }
+
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #1d4ed8;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #f1f5f9;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .card h4 {
+      margin-bottom: 10px;
+      color: #0f172a;
+    }
+
+    .contact-box {
+      background: #f1f5f9;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .contact-box p {
+      margin-bottom: 10px;
+    }
+
+    .contact-box a {
+      color: #1d4ed8;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0f172a;
+      color: white;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 768px) {
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .brand h1 {
+        font-size: 1.6rem;
+      }
+
+      .hero h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>NexGen Trio Solutions</h1>
-  <p>Welcome to our official website.</p>
-  <p>Engineering | Digital Consultancy | Research | Education | AI Solutions</p>
-  <p>Contact: nexgentrios@gmail.com</p>
+
+  <header>
+    <div class="topbar">
+      <img src="logo.png" alt="NexGen Trio Solutions Logo" class="logo">
+      <div class="brand">
+        <h1>NexGen Trio Solutions</h1>
+        <p>Engineering | Digital Consultancy | Research | Education | AI Solutions</p>
+      </div>
+    </div>
+
+    <div class="hero">
+      <h2>Empowering growth through engineering, innovation, and digital transformation</h2>
+      <p>
+        NexGen Trio Solutions supports research, industrial projects, engineering upskilling,
+        AI-driven solutions, and professional digital consultancy aligned with future-ready development.
+      </p>
+    </div>
+  </header>
+
+  <section>
+    <h3>About Us</h3>
+    <p>
+      NexGen Trio Solutions is a multidisciplinary initiative focused on engineering excellence,
+      practical innovation, research support, education, and technology-enabled problem solving.
+      We aim to help institutions, industries, and budding engineers build meaningful impact.
+    </p>
+  </section>
+
+  <section>
+    <h3>Our Services</h3>
+    <div class="services">
+      <div class="card">
+        <h4>Engineering Consultancy</h4>
+        <p>Support for technical problem solving, design, analysis, and project execution.</p>
+      </div>
+      <div class="card">
+        <h4>Research & Development</h4>
+        <p>Assistance for academic and industrial research, documentation, and innovation support.</p>
+      </div>
+      <div class="card">
+        <h4>Education & Upskilling</h4>
+        <p>Programs and guidance for students, educators, and aspiring engineers.</p>
+      </div>
+      <div class="card">
+        <h4>AI & Digital Solutions</h4>
+        <p>Digital workflows, automation ideas, and AI-enabled approaches for modern needs.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Contact Us</h3>
+    <div class="contact-box">
+      <p><strong>Email:</strong> <a href="mailto:nexgentrios@gmail.com">nexgentrios@gmail.com</a></p>
+      <p>Please write to us with your requirement, project idea, collaboration interest, or service enquiry.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 NexGen Trio Solutions. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
