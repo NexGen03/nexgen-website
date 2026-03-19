@@ -260,7 +260,8 @@
       align-items: end;
       justify-content: space-between;
       gap: 20px;
-      margin-bottom: 30px;
+      margin-bottom: 34px;
+      flex-wrap: wrap;
     }
 
     .section-head small {
@@ -274,41 +275,94 @@
     .section-head h3 {
       font-size: 36px;
       font-weight: 700;
+      line-height: 1.15;
     }
 
-    .section-head .right-note {
-      color: #94a3b8;
+    .right-note-box {
+      padding: 14px 18px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #cbd5e1;
       font-size: 14px;
+      line-height: 1.6;
     }
 
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 22px;
     }
 
     .card {
+      position: relative;
       border-radius: 24px;
-      padding: 24px;
-      background: rgba(255,255,255,0.05);
+      padding: 26px;
+      background: linear-gradient(180deg, rgba(15,23,42,0.92), rgba(8,12,28,0.96));
       border: 1px solid rgba(255,255,255,0.08);
-      transition: 0.2s ease;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.20);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #22d3ee, #3b82f6, #8b5cf6);
+      opacity: 0.95;
     }
 
     .card:hover {
-      transform: translateY(-4px);
-      background: rgba(255,255,255,0.07);
+      transform: translateY(-8px);
+      border-color: rgba(34,211,238,0.30);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.28);
+      background: linear-gradient(180deg, rgba(18,28,52,0.96), rgba(8,12,28,0.98));
+    }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      font-size: 24px;
+      background: rgba(34,211,238,0.10);
+      border: 1px solid rgba(34,211,238,0.18);
+      box-shadow: inset 0 0 18px rgba(34,211,238,0.05);
+    }
+
+    .card-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #67e8f9;
+      margin-bottom: 10px;
     }
 
     .card h4 {
-      font-size: 22px;
-      margin-bottom: 12px;
+      font-size: 20px;
+      margin-bottom: 14px;
+      line-height: 1.35;
     }
 
     .card p {
       color: #cbd5e1;
       font-size: 15px;
-      line-height: 1.8;
+      line-height: 1.85;
+    }
+
+    .card-link {
+      display: inline-block;
+      margin-top: 18px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #93c5fd;
     }
 
     .why-us {
@@ -388,8 +442,9 @@
 
     .contact-grid {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
+      grid-template-columns: 0.95fr 1.05fr;
       gap: 30px;
+      align-items: stretch;
     }
 
     .contact-left small {
@@ -412,14 +467,17 @@
       margin-bottom: 24px;
     }
 
-    .email-box {
+    .email-box,
+    .contact-note-box {
       border-radius: 20px;
       padding: 20px;
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 16px;
     }
 
-    .email-box .label {
+    .email-box .label,
+    .contact-note-box .label {
       color: #94a3b8;
       font-size: 14px;
       margin-bottom: 6px;
@@ -432,59 +490,73 @@
       word-break: break-word;
     }
 
-    .contact-form-wrap {
+    .contact-panel {
       border-radius: 28px;
-      padding: 24px;
-      background: rgba(255,255,255,0.05);
+      padding: 28px;
+      background: linear-gradient(180deg, rgba(15,23,42,0.92), rgba(8,12,28,0.96));
       border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.20);
     }
 
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
+    .contact-panel h4 {
+      font-size: 26px;
+      margin-bottom: 14px;
     }
 
-    .contact-form label {
-      display: block;
-      margin-bottom: 8px;
+    .contact-panel p {
       color: #cbd5e1;
-      font-size: 14px;
+      font-size: 15px;
+      line-height: 1.9;
+      margin-bottom: 22px;
     }
 
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
+    .contact-points {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .contact-point {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
       padding: 14px 16px;
       border-radius: 18px;
+      background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
-      background: #020617;
-      color: white;
+    }
+
+    .contact-point-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(34,211,238,0.12);
+      border: 1px solid rgba(34,211,238,0.20);
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .contact-point-text strong {
+      display: block;
       font-size: 15px;
-      outline: none;
+      margin-bottom: 3px;
     }
 
-    .contact-form textarea {
-      min-height: 140px;
-      resize: vertical;
-    }
-
-    .contact-form button {
-      width: fit-content;
-      border: none;
-      cursor: pointer;
-      border-radius: 18px;
-      padding: 14px 24px;
-      background: #22d3ee;
-      color: #0f172a;
+    .contact-point-text span {
+      display: block;
+      color: #cbd5e1;
       font-size: 14px;
-      font-weight: 700;
+      line-height: 1.6;
     }
 
-    .contact-form .helper {
-      color: #94a3b8;
-      font-size: 13px;
-      line-height: 1.7;
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 6px;
     }
 
     footer {
@@ -548,7 +620,8 @@
 
       .section-head h3,
       .why-grid h3,
-      .contact-left h3 {
+      .contact-left h3,
+      .contact-panel h4 {
         font-size: 28px;
       }
 
@@ -626,38 +699,56 @@
           <small style="color:#67e8f9;">What we do</small>
           <h3>Integrated solutions for modern growth</h3>
         </div>
-        <div class="right-note">One partner. Multiple capabilities. Simple execution.</div>
+        <div class="right-note-box">One partner. Multiple capabilities. Simple execution.</div>
       </div>
 
       <div class="services-grid">
         <div class="card">
+          <div class="card-icon">⚙️</div>
+          <div class="card-label">Consulting</div>
           <h4>Engineering & Industrial Consulting</h4>
           <p>Practical engineering support for design, validation, industrial problem-solving, optimization, and implementation-oriented consulting.</p>
+          <div class="card-link">Focused solutions →</div>
         </div>
 
         <div class="card">
+          <div class="card-icon">🧠</div>
+          <div class="card-label">Digital</div>
           <h4>AI & Digital Solutions</h4>
           <p>AI-enabled systems, automation workflows, data-driven decision support, digital transformation, and custom software solutions.</p>
+          <div class="card-link">Smart transformation →</div>
         </div>
 
         <div class="card">
+          <div class="card-icon">🔬</div>
+          <div class="card-label">Innovation</div>
           <h4>Research & Innovation</h4>
-          <p>Collaborative R&D, prototype development, applied research support, proof-of-concept projects, and technology translation.</p>
+          <p>Collaborative R&amp;D, prototype development, applied research support, proof-of-concept projects, and technology translation.</p>
+          <div class="card-link">Research to impact →</div>
         </div>
 
         <div class="card">
+          <div class="card-icon">🎓</div>
+          <div class="card-label">Learning</div>
           <h4>Education & Upskilling</h4>
           <p>Industry-focused training, workshops, student mentoring, faculty development, and programs for budding engineers.</p>
+          <div class="card-link">Build capabilities →</div>
         </div>
 
         <div class="card">
+          <div class="card-icon">📁</div>
+          <div class="card-label">Execution</div>
           <h4>Strategic Project Support</h4>
           <p>From concept to execution for startups, institutions, industries, and development initiatives.</p>
+          <div class="card-link">From idea to delivery →</div>
         </div>
 
         <div class="card">
+          <div class="card-icon">🌐</div>
+          <div class="card-label">Impact</div>
           <h4>Viksit Bharat Aligned Initiatives</h4>
           <p>Solutions aimed at innovation, self-reliance, capacity building, and scalable impact across technology and society.</p>
+          <div class="card-link">Scalable national relevance →</div>
         </div>
       </div>
     </div>
@@ -709,40 +800,60 @@
         <small>Contact Us</small>
         <h3>Tell us what you need</h3>
         <p>
-          Share your requirement and your email ID. We will receive the enquiry in Gmail and get back to you.
+          For now, the easiest way to reach us is by email. Share your requirement, collaboration interest,
+          project idea, or service enquiry and we will get back to you.
         </p>
 
         <div class="email-box">
           <div class="label">Email</div>
           <a href="mailto:nexgentrios@gmail.com">nexgentrios@gmail.com</a>
         </div>
+
+        <div class="contact-note-box">
+          <div class="label">Simple next step</div>
+          <p style="margin:0; color:#cbd5e1;">
+            Click the email address or the button on the right to send your requirement directly from your mail app.
+          </p>
+        </div>
       </div>
 
-      <div class="contact-form-wrap">
-        <form class="contact-form" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST">
-          <input type="hidden" name="_subject" value="New website enquiry - NexGen Trio Solutions">
+      <div class="contact-panel">
+        <h4>Start the conversation</h4>
+        <p>
+          You can contact NexGen Trio Solutions for engineering consultancy, AI and digital solutions,
+          research collaboration, industrial support, education initiatives, and strategic project discussions.
+        </p>
 
-          <div>
-            <label for="name">Name</label>
-            <input id="name" type="text" name="name" required placeholder="Enter your name">
+        <div class="contact-points">
+          <div class="contact-point">
+            <div class="contact-point-icon">📩</div>
+            <div class="contact-point-text">
+              <strong>Email your requirement</strong>
+              <span>Describe your need, expected support, and contact details.</span>
+            </div>
           </div>
 
-          <div>
-            <label for="email">Email ID</label>
-            <input id="email" type="email" name="email" required placeholder="Enter your email">
+          <div class="contact-point">
+            <div class="contact-point-icon">🤝</div>
+            <div class="contact-point-text">
+              <strong>Collaboration enquiries welcome</strong>
+              <span>Institutions, startups, industries, and research teams can reach out for joint initiatives.</span>
+            </div>
           </div>
 
-          <div>
-            <label for="message">Request / Message</label>
-            <textarea id="message" name="message" required placeholder="Describe your requirement"></textarea>
+          <div class="contact-point">
+            <div class="contact-point-icon">🚀</div>
+            <div class="contact-point-text">
+              <strong>Idea to execution support</strong>
+              <span>We can discuss how to move from concept, problem statement, or need into a practical solution path.</span>
+            </div>
           </div>
+        </div>
 
-          <button type="submit">Send Request</button>
-
-          <div class="helper">
-            After you create your Formspree form, replace the placeholder form URL. Then contact requests will come to your email.
-          </div>
-        </form>
+        <div class="contact-actions">
+          <a class="btn-primary" href="mailto:nexgentrios@gmail.com?subject=Enquiry%20from%20Website%20-%20NexGen%20Trio%20Solutions">Email Us Now</a>
+          <a class="btn-secondary" href="#services">Review Services</a>
+        </div>
       </div>
     </div>
   </section>
