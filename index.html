@@ -169,6 +169,8 @@
       font-size: 14px;
       font-weight: 600;
       transition: 0.2s ease;
+      cursor: pointer;
+      border: none;
     }
 
     .btn-primary {
@@ -552,11 +554,41 @@
       line-height: 1.6;
     }
 
-    .contact-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 6px;
+    .contact-form {
+      display: grid;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 8px;
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: #020617;
+      color: white;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .contact-form textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .contact-form-helper {
+      color: #94a3b8;
+      font-size: 13px;
+      line-height: 1.7;
+      margin-top: 2px;
     }
 
     footer {
@@ -800,8 +832,8 @@
         <small>Contact Us</small>
         <h3>Tell us what you need</h3>
         <p>
-          For now, the easiest way to reach us is by email. Share your requirement, collaboration interest,
-          project idea, or service enquiry and we will get back to you.
+          Share your requirement, collaboration interest, project idea, or service enquiry.
+          Your message will be submitted through the website and will reach us directly.
         </p>
 
         <div class="email-box">
@@ -810,9 +842,9 @@
         </div>
 
         <div class="contact-note-box">
-          <div class="label">Simple next step</div>
+          <div class="label">Preferred contact mode</div>
           <p style="margin:0; color:#cbd5e1;">
-            Click the email address or the button on the right to send your requirement directly from your mail app.
+            You may either submit the form or email us directly, whichever is easier for you.
           </p>
         </div>
       </div>
@@ -820,16 +852,16 @@
       <div class="contact-panel">
         <h4>Start the conversation</h4>
         <p>
-          You can contact NexGen Trio Solutions for engineering consultancy, AI and digital solutions,
-          research collaboration, industrial support, education initiatives, and strategic project discussions.
+          Use the form below to send your enquiry for engineering consultancy, AI and digital solutions,
+          research collaboration, industrial support, education initiatives, or strategic project discussions.
         </p>
 
         <div class="contact-points">
           <div class="contact-point">
             <div class="contact-point-icon">📩</div>
             <div class="contact-point-text">
-              <strong>Email your requirement</strong>
-              <span>Describe your need, expected support, and contact details.</span>
+              <strong>Submit your requirement</strong>
+              <span>Share your name, email, and a brief message about what support you need.</span>
             </div>
           </div>
 
@@ -845,15 +877,38 @@
             <div class="contact-point-icon">🚀</div>
             <div class="contact-point-text">
               <strong>Idea to execution support</strong>
-              <span>We can discuss how to move from concept, problem statement, or need into a practical solution path.</span>
+              <span>We can discuss how to move from concept or need into a practical solution path.</span>
             </div>
           </div>
         </div>
 
-        <div class="contact-actions">
-          <a class="btn-primary" href="mailto:nexgentrios@gmail.com?subject=Enquiry%20from%20Website%20-%20NexGen%20Trio%20Solutions">Email Us Now</a>
-          <a class="btn-secondary" href="#services">Review Services</a>
-        </div>
+        <form class="contact-form" action="https://formspree.io/f/mbdzwlkk" method="POST">
+          <input type="hidden" name="_subject" value="New website enquiry - NexGen Trio Solutions" />
+
+          <div>
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name" required placeholder="Enter your name" />
+          </div>
+
+          <div>
+            <label for="email">Email ID</label>
+            <input id="email" type="email" name="email" required placeholder="Enter your email" />
+          </div>
+
+          <div>
+            <label for="message">Request / Message</label>
+            <textarea id="message" name="message" required placeholder="Describe your requirement"></textarea>
+          </div>
+
+          <div class="hero-buttons" style="margin-top: 0;">
+            <button type="submit" class="btn-primary">Send Request</button>
+            <a class="btn-secondary" href="mailto:nexgentrios@gmail.com?subject=Enquiry%20from%20Website%20-%20NexGen%20Trio%20Solutions">Email Instead</a>
+          </div>
+
+          <div class="contact-form-helper">
+            After submission, your enquiry will be routed through Formspree to your configured email workflow.
+          </div>
+        </form>
       </div>
     </div>
   </section>
